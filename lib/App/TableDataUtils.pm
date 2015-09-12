@@ -11,7 +11,7 @@ our %SPEC;
 
 $SPEC{gen_hash} = {
     v => 1.1,
-    summary => 'Generate hash',
+    summary => 'Generate hash with random keys/values',
     args => {
         num_keys => {
             summary => 'Number of keys',
@@ -39,7 +39,7 @@ sub gen_hash {
 
 $SPEC{gen_aos} = {
     v => 1.1,
-    summary => 'Generate array of scalars',
+    summary => 'Generate array of scalars with random values',
     args => {
         num_elems => {
             summary => 'Number of elements',
@@ -62,7 +62,7 @@ sub gen_aos {
 
 $SPEC{gen_aoaos} = {
     v => 1.1,
-    summary => 'Generate array of (array of scalars)',
+    summary => 'Generate array of (array of scalars) with random values',
     args => {
         num_rows => {
             summary => 'Number of rows',
@@ -95,7 +95,7 @@ sub gen_aoaos {
 
 $SPEC{gen_aohos} = {
     v => 1.1,
-    summary => 'Generate array of (hash of scalars)',
+    summary => 'Generate array of (hash of scalars) with random values',
     args => {
         num_rows => {
             summary => 'Number of rows',
