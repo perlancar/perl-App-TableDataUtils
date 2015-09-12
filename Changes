@@ -1,5 +1,12 @@
 Revision history for App-TableDataUtils
 
+0.02    2015-09-12 (PERLANCAR)
+
+	- No functional changes.
+
+	- [dzil] Fix plugin ordering.
+
+
 0.01    2015-09-12 (PERLANCAR)
 
         - First release.
