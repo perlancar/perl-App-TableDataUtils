@@ -141,6 +141,8 @@ This distribution includes a few utility scripts related to table data.
 
 #INSERT_EXECS_LIST
 
+The main CLI, L<tabledata>, is currently split into its own distribution.
+
 
 =head1 SEE ALSO
 
