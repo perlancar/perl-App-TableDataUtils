@@ -18,6 +18,7 @@ $SPEC{gen_rand_hash} = {
             schema => ['int*', min=>0],
             default => 10,
             cmdline_aliases => {n=>{}},
+            pos => 0,
         },
     },
 };
@@ -46,6 +47,7 @@ $SPEC{gen_rand_aos} = {
             schema => ['int*', min=>0],
             default => 10,
             cmdline_aliases => {n=>{}},
+            pos => 0,
         },
     },
 };
@@ -69,12 +71,14 @@ $SPEC{gen_rand_aoaos} = {
             schema => ['int*', min=>0],
             default => 10,
             cmdline_aliases => {r=>{}},
+            pos => 0,
         },
         num_columns => {
             summary => 'Number of columns',
             schema => ['int*', min=>0, max=>255],
             default => 3,
             cmdline_aliases => {c=>{}},
+            pos => 1,
         },
     },
 };
@@ -102,12 +106,14 @@ $SPEC{gen_rand_aohos} = {
             schema => ['int*', min=>0],
             default => 10,
             cmdline_aliases => {r=>{}},
+            pos => 0,
         },
         num_columns => {
             summary => 'Number of columns',
             schema => ['int*', min=>0, max=>255],
             default => 3,
             cmdline_aliases => {c=>{}},
+            pos => 1,
         },
     },
 };
