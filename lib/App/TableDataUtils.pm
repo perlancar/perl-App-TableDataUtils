@@ -9,7 +9,7 @@ use warnings;
 
 our %SPEC;
 
-$SPEC{gen_hash} = {
+$SPEC{gen_rand_hash} = {
     v => 1.1,
     summary => 'Generate hash with random keys/values',
     args => {
@@ -18,10 +18,11 @@ $SPEC{gen_hash} = {
             schema => ['int*', min=>0],
             default => 10,
             cmdline_aliases => {n=>{}},
+            pos => 0,
         },
     },
 };
-sub gen_hash {
+sub gen_rand_hash {
     my %args = @_;
 
     my $hash = {};
@@ -37,7 +38,7 @@ sub gen_hash {
     [200, "OK", $hash];
 }
 
-$SPEC{gen_aos} = {
+$SPEC{gen_rand_aos} = {
     v => 1.1,
     summary => 'Generate array of scalars with random values',
     args => {
@@ -46,10 +47,11 @@ $SPEC{gen_aos} = {
             schema => ['int*', min=>0],
             default => 10,
             cmdline_aliases => {n=>{}},
+            pos => 0,
         },
     },
 };
-sub gen_aos {
+sub gen_rand_aos {
     my %args = @_;
 
     my $aos = [];
@@ -60,7 +62,7 @@ sub gen_aos {
     [200, "OK", $aos];
 }
 
-$SPEC{gen_aoaos} = {
+$SPEC{gen_rand_aoaos} = {
     v => 1.1,
     summary => 'Generate array of (array of scalars) with random values',
     args => {
@@ -69,16 +71,18 @@ $SPEC{gen_aoaos} = {
             schema => ['int*', min=>0],
             default => 10,
             cmdline_aliases => {r=>{}},
+            pos => 0,
         },
         num_columns => {
             summary => 'Number of columns',
             schema => ['int*', min=>0, max=>255],
             default => 3,
             cmdline_aliases => {c=>{}},
+            pos => 1,
         },
     },
 };
-sub gen_aoaos {
+sub gen_rand_aoaos {
     my %args = @_;
 
     my $aoaos = [];
@@ -93,7 +97,7 @@ sub gen_aoaos {
     [200, "OK", $aoaos];
 }
 
-$SPEC{gen_aohos} = {
+$SPEC{gen_rand_aohos} = {
     v => 1.1,
     summary => 'Generate array of (hash of scalars) with random values',
     args => {
@@ -102,23 +106,25 @@ $SPEC{gen_aohos} = {
             schema => ['int*', min=>0],
             default => 10,
             cmdline_aliases => {r=>{}},
+            pos => 0,
         },
         num_columns => {
             summary => 'Number of columns',
             schema => ['int*', min=>0, max=>255],
             default => 3,
             cmdline_aliases => {c=>{}},
+            pos => 1,
         },
     },
 };
-sub gen_aohos {
+sub gen_rand_aohos {
     my %args = @_;
 
     my $aohos = [];
 
     my @columns;
     {
-        my $gen_hash_res = gen_hash(num_keys => $args{num_columns});
+        my $gen_hash_res = gen_rand_hash(num_keys => $args{num_columns});
         @columns = keys %{ $gen_hash_res->[2] };
     }
 
@@ -140,6 +146,8 @@ sub gen_aohos {
 This distribution includes a few utility scripts related to table data.
 
 #INSERT_EXECS_LIST
+
+The main CLI, L<tabledata>, is currently split into its own distribution.
 
 
 =head1 SEE ALSO
