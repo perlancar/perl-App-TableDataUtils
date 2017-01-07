@@ -1,5 +1,3 @@
-Revision history for App-TableDataUtils
-
 0.03    2015-09-13 (PERLANCAR)
 
         - [Incompatible change] Rename script: gen-table-data to gen-rand-table.
