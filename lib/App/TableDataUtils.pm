@@ -140,6 +140,25 @@ sub gen_rand_aohos {
     [200, "OK", $aohos];
 }
 
+$SPEC{td2csv} = {
+    v => 1.1,
+    summary => 'Convert table data in STDIN to CSV',
+    description => <<'_',
+
+Actually alias for `td as-csv`.
+
+_
+    args => {
+    },
+};
+sub td2csv {
+    require App::td;
+
+    my %args = @_;
+
+    App::td::td(action => 'as-csv');
+}
+
 1;
 #ABSTRACT: Routines related to table data
 
