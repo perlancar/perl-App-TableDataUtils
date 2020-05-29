@@ -1,6 +1,8 @@
 package App::TableDataUtils;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -150,7 +152,7 @@ This distribution includes a few utility scripts related to table data.
 
 =head1 SEE ALSO
 
-L<td>
+L<td> from L<App::td>
 
 L<TableDef>
 
